@@ -101,7 +101,7 @@ def scan(
                         + "</script></body>",
                     )
 
-                html = html.encode("utf-8")
+                # html = html.encode("utf-8")
                 logger.info("[OK]")
 
             path = os.path.normpath(url.replace(site_url, ""))
@@ -127,6 +127,7 @@ def scan(
                     file_base_url = ""
 
             file_data = parser.replace_base_url(html, file_base_url)
+            file_data = file_data.encode("utf-8")
 
             logger.debug("file dirs: " + file_dirs)
             logger.debug("file name: " + file_name)
