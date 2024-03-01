@@ -126,8 +126,7 @@ def scan(
                 else:
                     file_base_url = ""
 
-            file_data = parser.replace_base_url(html, file_base_url)
-            file_data = file_data.encode("utf-8")
+            file_data = parser.replace_base_url(html, file_base_url)            
 
             logger.debug("file dirs: " + file_dirs)
             logger.debug("file name: " + file_name)
@@ -135,6 +134,8 @@ def scan(
             logger.debug("file base url: " + file_base_url)
             logger.debug("file data: " + file_data)
             logger.debug("---")
+
+            file_data = file_data.encode("utf-8")
 
             urls_data.append(
                 {
